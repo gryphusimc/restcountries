@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: restcountries
+  annotations:
+    github.com/project-slug: apilayer/restcountries
+spec:
+  type: other
+  lifecycle: unknown
