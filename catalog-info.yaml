@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: restcountries
-  description: API pública para consultar información de países.
+  description: API pública para consultar información de países del mundo.
   tags:
     - rest
     - geo
@@ -12,19 +12,4 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
-  definition:
-    $text: |
-      openapi: 3.0.0
-      info:
-        title: REST Countries
-        version: 1.0.0
-        description: API pública para datos de países del mundo
-      servers:
-        - url: https://restcountries.com/v3.1
-      paths:
-        /all:
-          get:
-            summary: Obtener todos los países
-            responses:
-              '200':
-                description: OK
+  definition: https://raw.githubusercontent.com/gryphusimc/restcountries/master/openapi.yaml
