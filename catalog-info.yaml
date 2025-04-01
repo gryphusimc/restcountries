@@ -12,5 +12,4 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
-  definition:
-    $openapi: https://raw.githubusercontent.com/gryphusimc/restcountries/master/openapi.yaml
+  $openapi: https://raw.githubusercontent.com/gryphusimc/restcountries/master/openapi.yaml
