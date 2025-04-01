@@ -12,17 +12,5 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
-  definition: |
-    openapi: 3.0.0
-    info:
-      title: REST Countries
-      version: 1.0.0
-    servers:
-      - url: https://restcountries.com/v3.1
-    paths:
-      /all:
-        get:
-          summary: Obtener todos los países
-          responses:
-            '200':
-              description: OK
+  definition:
+    $openapi: https://raw.githubusercontent.com/gryphusimc/restcountries/master/openapi.yaml
