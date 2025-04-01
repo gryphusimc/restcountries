@@ -6,7 +6,7 @@ metadata:
   tags:
     - rest
     - geo
-    - países
+    - paises
     - json
 spec:
   type: openapi
