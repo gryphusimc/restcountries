@@ -1,13 +1,54 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
   name: restcountries
-  annotations:
-    github.com/project-slug: apilayer/restcountries
+  description: API pública para consultar información de países.
+  tags:
+    - rest
+    - geo
+    - países
+    - json
 spec:
-  type: service
-  lifecycle: experimental
+  type: openapi
+  lifecycle: production
   owner: team-a
-  system: artist-engagement-portal
-  dependsOn: ['resource:artists-db']
-  apiConsumedBy: ['component:www-artist']
+  definition:
+    $text: |
+      openapi: 3.0.0
+      info:
+        title: REST Countries
+        version: 1.0.0
+        description: API pública para datos de países del mundo
+      servers:
+        - url: https://restcountries.com/v3.1
+      paths:
+        /all:
+          get:
+            summary: Obtener todos los países
+            responses:
+              '200':
+                description: Lista de países
+        /name/{name}:
+          get:
+            summary: Buscar país por nombre
+            parameters:
+              - in: path
+                name: name
+                required: true
+                schema:
+                  type: string
+            responses:
+              '200':
+                description: País encontrado
+        /alpha/{code}:
+          get:
+            summary: Buscar país por código
+            parameters:
+              - in: path
+                name: code
+                required: true
+                schema:
+                  type: string
+            responses:
+              '200':
+                description: País encontrado
